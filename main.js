@@ -3,7 +3,7 @@
 /* ***************************************************************
                  Introduction to JavaScript
 
-   You mist write code to make all of the tests at the bottom pass.
+   You must write code to make all of the tests at the bottom pass.
    Run the file in the terminal with: node main.js
    If there are no test failures, you will see a message like this:
                  No errors! Congratulations!
@@ -21,7 +21,14 @@
  // (c) Create an `age` variable that uses an expression to calculate your age from
  //     your `birthYear` and the `currentYear`
  //     (NOTE: DO NOT simply assign a number to the `age` variable, use an expression!)
-
+ //
+ let firstName = 'Billy';
+ let lastName = 'Bob';
+ const birthYear = 1952;
+ let currentYear = 2017;
+ let middleName;
+ let age = currentYear - birthYear;
+ console.log(age);
 
 
  // TODO 2:
@@ -32,7 +39,12 @@
  //     between 1900 and your birth year.
  //     NOTE: This variable SHOULD NOT have any decimal places!
  //     NOTE: You MUST USE an expression for this, it may have more than one operation!
-
+let greeting = "Hello there " + firstName + "!";
+console.log(greeting);
+let decademodulo = ((birthYear - 1900) % 10);
+console.log(decademodulo);
+let decades = (((birthYear - 1900) - decademodulo) / 10);
+console.log(decades);
 
 
  // TODO 3:
@@ -46,8 +58,22 @@
  //     Next, declare a variable called `review`, then either assign "good" or "bad"
  //         depending on the value of `instructorIsAwesome`
  //     NOTE: You MUST use code to determine which value to assign to `review`!
+let style;
+if (age < 35){
+  style = 'hip';
+} else {
+  style = 'classic';
+}
+console.log(style);
 
-
+let instructorIsAwesome = true;
+let review;
+if (instructorIsAwesome === true) {
+  review = 'good';
+} else {
+  review = 'bad';
+}
+console.log(review);
 
  // TODO 4:
  // (a) Create a function called `math` which accepts three arguments: two numbers
@@ -61,8 +87,19 @@
  // (c) If the `math` function is NOT called with one of the operations in (b)
  //     then it should return the value for something that is Not a Number
 
-
-
+function math (numberOne, numberTwo, mathOperation) {
+  if (mathOperation === 'add') {
+    return numberOne + numberTwo;
+  } else if (mathOperation === 'subtract') {
+    return numberOne - numberTwo;
+  } else if (mathOperation === 'multiply') {
+    return numberOne * numberTwo;
+  } else  if (mathOperation === 'divide') {
+    return numberOne / numberTwo;
+  } else {
+    return NaN;
+  }
+}
 
  // TODO 5:
  // (a) Write a function called `madlib` that takes 4 separate words as
@@ -72,6 +109,23 @@
  //     Finally, the function should return that new sentence.
  // (b) If any of the words is not provided to the function then it should use
  //     the word "bananas" instead.
+function madlib (answer1, answer2, answer3, answer4){
+  if (!answer1) {
+    answer1 = 'bananas';
+  }
+  if (!answer2) {
+    answer2 = 'bananas';
+  }
+  if (!answer3) {
+    answer3 = 'bananas';
+  }
+  if (!answer4) {
+    answer4 = 'bananas';
+  }
+  let sentence = "I prefer " + answer1 + " while I " + answer2 + " so that I don't " +
+  answer3 + " on the " + answer4 + ".";
+  return sentence;
+}
 
 
 
